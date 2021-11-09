@@ -1,0 +1,13 @@
+### Terraform ###
+# Compiled files
+**/*.tfstate
+**/*.tfplan
+**/*.tfstate.backup
+**/.terraform
+**/.terraform/*
+
+
+
+# Ignore the AWS Providers
+ **/bin/plugin-cache/**
+

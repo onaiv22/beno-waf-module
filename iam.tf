@@ -52,8 +52,8 @@ resource "aws_iam_policy" "waf_logs_firehose_policy" {
 # kinesis role to s3 buckets
 ######################################
 resource "aws_iam_role" "waf_logs_firehose_role" {
-    name = waf-logs-role
-    assume_role_policy = aws_iam_policy_document.assume_role_waf_logs.json
+    name = "waf-logs-role"
+    assume_role_policy = data.aws_iam_policy_document.assume_role_waf_logs.json
     path = "/"
     force_detach_policies = true
 }

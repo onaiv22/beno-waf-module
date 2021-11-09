@@ -2,7 +2,7 @@
 # s3 bucket for waf logs
 ###########################################
 resource "aws_s3_bucket" "waf_logs" {
-    bucket = "waf_logs_06112021"
+    bucket = "waf-logs-08112021"
     acl = "private"
 
     tags = {
