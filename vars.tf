@@ -93,6 +93,25 @@ variable "managed_rules" {
   ]
 }
 
+#cldfront vars
+variable "site-index" {
+   type = "string"
+   description = "website index page"
+   default = "sitemaintenance.html"
+     
+}
+
+variable "s3_upload" {
+  type = "list"
+  description = "uploading multiple objects in s3"
+  default = [
+    {"key"  = "sitemaintenance.html", "content_type" = "text/html"},
+    {"key"  = "nav_logo.png", "content_type" = "image/png"},
+    {"key"  = "main.css", "content_type" = "text/css"},
+    {"key"  = "vendor.js", "content_type" = "text/javascript"}
+  ]
+}
+
 ##################WHAT IS BOT##################################################################################
 # Bot traffic describes any non-human traffic to a website or an app. 
 #The term bot traffic often carries a negative connotation, but in reality bot traffic isn't necessarily good or bad
