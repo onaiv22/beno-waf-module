@@ -12,6 +12,7 @@ resource "aws_cloudfront_distribution" "web" {
     is_ipv6_enabled                = true 
     comment                        = "cloudfront distribution for maintenance page"
     default_root_object            = var.site-index
+    web_acl_id                     = aws_wafv2_web_acl.global.arn
 
     #aliases = [list of alternative domain names for the distribution] 
 
