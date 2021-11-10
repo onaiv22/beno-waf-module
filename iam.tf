@@ -22,7 +22,8 @@ data "aws_iam_policy_document" "waf_logs_s3_policy" {
           "logs:PutlogEvents"
       ]
       resources = [
-          aws_cloudwatch_log_stream.waf_logs.arn
+          aws_cloudwatch_log_stream.global_waf_logs.arn,
+          aws_cloudwatch_log_stream.regional_waf_logs.arn
       ]
     }
 }

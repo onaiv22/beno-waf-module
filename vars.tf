@@ -10,7 +10,17 @@ variable "webacl_description" {
   description = "Description for the Web ACL"
 }
 
-variable "scope" {
+variable "global_scope" {
+  type        = string
+  default     = "CLOUDFRONT"
+  description = <<-EOD
+  Whether for CloudFront distribution or for a regional application.
+  Valid values are CLOUDFRONT or REGIONAL.
+  To work with CloudFront, you must also specify the region us-east-1 on the AWS provider.
+  EOD
+}
+
+variable "regional_scope" {
   type        = string
   default     = "REGIONAL"
   description = <<-EOD

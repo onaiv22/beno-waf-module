@@ -1,7 +1,7 @@
-resource "aws_wafv2_web_acl" "main" {
+resource "aws_wafv2_web_acl" "global" {
     name        = var.webacl_name
     description = var.webacl_description
-    scope       = var.scope
+    scope       = var.global_scope
 
     default_action {
         allow {}
@@ -57,7 +57,15 @@ resource "aws_wafv2_web_acl" "main" {
     }
   }
 
-  output "waf_acl" {
-    value = aws_wafv2_web_acl.main.arn
+
+resource "aws_wafv2_web_acl_association" "main" {
+  resource_arn = aws_cloudfront_distribution.web.arn
+  web_acl_arn  = aws_wafv2_web_acl.global.arn
+}
+
+
+
+  output "global_waf_acl" {
+    value = aws_wafv2_web_acl.global.arn
 
   }
