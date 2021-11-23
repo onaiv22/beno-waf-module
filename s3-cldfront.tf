@@ -3,7 +3,7 @@
 ################################################################################################################
 
 resource "aws_s3_bucket" "static_website" {
-    bucket = "beno-project-09112021"
+    bucket = "beno-project-12112021"
     acl    = "private"
 
     website {

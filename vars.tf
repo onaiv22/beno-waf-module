@@ -105,14 +105,14 @@ variable "managed_rules" {
 
 #cldfront vars
 variable "site-index" {
-   type = "string"
+   type = string
    description = "website index page"
    default = "sitemaintenance.html"
      
 }
 
 variable "s3_upload" {
-  type = "list"
+  type = list
   description = "uploading multiple objects in s3"
   default = [
     {"key"  = "sitemaintenance.html", "content_type" = "text/html"},
